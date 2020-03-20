@@ -14,6 +14,10 @@ const bench32Publikey='lambdapub1addwnpepq0zuqpchp295d4lgll9wcf4z0nex7lj0a99t07q
 const MNEMONIC    = 'soccer sort make soon family buyer merry dash major winner emerge peace zone drastic yellow sound razor void angry weasel vehicle afford toe sing';
 const PRIVATE_KEY = 'd95debc02958f4174a0dd105bfe078ce0961ae0b3a3d5b9d1b51e7d70b3a8ae1';
 
+const configfile =`{"salt":"dZ56yoFQRYmr4RVRjhqXVQ==","privateKey":"M4Cg7zxsbFSRGqjac17XGoJUKN2wmZ1CM6YQhvQzHuMICpYtq4y90hDadv29fKb5Bid/rvWT6Ds4qtGvttR1WdH0YY6/Fw2of8E72j4=","name":"常用钱包1","address":"lambda163q4m634nq8les4nuvdvz49tk6aeh926t0ccsc","publicKey":"lambdapub1addwnpepq0zuqpchp295d4lgll9wcf4z0nex7lj0a99t07qnhxqn80y470t9zhrhpn6"}`
+
+
+
 var password='123456',name='test';
 describe('lib/keyStore', () => {
     let bytes;
@@ -63,10 +67,15 @@ describe('lib/keyStore password error', () => {
     it('Should Password error', () => {   
         assert.throws(iThrowError, Error, `{"code":"hdkey-31","errorType":"Password_error","message":"Password error","othermsg":""}`);
     });
-    
+});
 
-    
+describe('lib/keyStore file', () => {
+    var keys = LAMBHDKEY.crypto.getKeysFromMnemonic(MNEMONIC);
 
-    
+    var privateKey = LAMBHDKEY.keyStore.checkJson(JSON.parse(configfile),password);
 
+    it('Should checkjson and to json privateKey', () => {   
+        keys.privateKey.toString('base64').should.be.equal(privateKey.toString('base64'));
+    });
+    
 });
