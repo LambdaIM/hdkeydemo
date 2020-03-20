@@ -61,7 +61,7 @@ describe('lib/keyStore password error', () => {
         var _privateKey = LAMBHDKEY.keyStore.checkJson(value,password+1);
     }
     it('Should Password error', () => {   
-        assert.throws(iThrowError, Error, `{"code":"hdkey-31","message":"Password error"}`);
+        assert.throws(iThrowError, Error, `{"code":"hdkey-31","errorType":"Password_error","message":"Password error","othermsg":""}`);
     });
     
 
