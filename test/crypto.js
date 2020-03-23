@@ -12,6 +12,8 @@ const MNEMONIC    = 'soccer sort make soon family buyer merry dash major winner 
 const PUBLIC_KEY  = '03c5c007170a8b46d7e8ffcaec26a27cf26f7e4fe94ab7f813b98133bc95f3d651';
 const PRIVATE_KEY = 'd95debc02958f4174a0dd105bfe078ce0961ae0b3a3d5b9d1b51e7d70b3a8ae1';
 
+const addressSon ='lambda1jzduec2ucv2mvntwskvht5yw6ue3plt09xp9pv'
+
 describe('lib/crypto', () => {
     let keys;
     let signature;
@@ -20,6 +22,13 @@ describe('lib/crypto', () => {
     const json  = {
         data: crypto.randomBytes(128)
     };
+    it('Should mnemonic generate 24 word ', () => {
+        var wordstr = LAMBHDKEY.crypto.generateRandomMnemonic(256);
+        var length = wordstr.split(' ').length;
+        length.should.equal(24);
+
+        
+    });
 
     it('Should generate keys from mnemonic', () => {
         keys = LAMBHDKEY.crypto.getKeysFromMnemonic(MNEMONIC);
@@ -51,5 +60,10 @@ describe('lib/crypto', () => {
     it('Should reject wrong signature', () => {
         const verify = LAMBHDKEY.crypto.verifyJson(json, crypto.randomBytes(64), keys.publicKey);
         verify.should.be.false;
+    });
+    it('Mnemonic by index', () => {
+        const sonkeys = LAMBHDKEY.crypto.getKeysFromMnemonicbyindex(MNEMONIC);
+        const addr = LAMBHDKEY.address.getAddress(sonkeys.publicKey);
+        addr.should.be.equal(addressSon);
     });
 });
