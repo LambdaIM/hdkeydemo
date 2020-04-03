@@ -1,6 +1,6 @@
 {
-  "name": "@jswebfans/hdkeyjs",
-  "version": "1.3.13",
+  "name": "@jswebfans/hdkeytest",
+  "version": "0.0.1",
   "description": "Lib to generate private/public keys, addresses for lambda  ",
   "main": "index.js",
   "license": "MIT",
