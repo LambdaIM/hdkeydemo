@@ -34,10 +34,6 @@
     "eslint-plugin-standard": "^4.0.1",
     "mocha": "^6.1.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:https://github.com/LambdaIM/HdkeyJs"
-  },
   "keywords": [
     "crypto",
     "lambdaHDKey",
@@ -46,5 +42,5 @@
     "address",
     "bitcoin"
   ],
-  "homepage": "https://github.com/LambdaIM/HdkeyJs.git"
+  
 }
