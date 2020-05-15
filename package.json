@@ -7,11 +7,10 @@
   "scripts": {
     "test": "mocha",
     "docs": "jsdoc lib/address.js lib/crypto.js",
-    "eslint":"./node_modules/.bin/eslint index.js util/  lib/ ",
-    "eslint:fix":"./node_modules/.bin/eslint index.js util/  lib/ --fix",
-    "build": "webpack --sourcemap=false --progress ",
-    "doc": "./node_modules/.bin/jsdoc ./lib -d ./doc&&./node_modules/.bin/jsdoc  lib ./README.md  -d ./doc",
-    "docmd":"./node_modules/jsdoc-to-markdown/bin/cli.js  lib/* > api.md"
+    "eslint": "./node_modules/.bin/eslint index.js util/  lib/ ",
+    "eslint:fix": "./node_modules/.bin/eslint index.js util/  lib/ --fix",
+    "doc": "./node_modules/.bin/jsdoc  ./index.js ./lib ./README.md  -d ./doc",
+    "docmd":"./node_modules/jsdoc-to-markdown/bin/cli.js ./index.js  lib/* > api.md"
   },
   "dependencies": {
     "@jswebfans/amino-js": "0.4.5",
