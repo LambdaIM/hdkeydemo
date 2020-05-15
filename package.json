@@ -9,15 +9,19 @@
     "docs": "jsdoc lib/address.js lib/crypto.js",
     "eslint":"./node_modules/.bin/eslint index.js util/  lib/ ",
     "eslint:fix":"./node_modules/.bin/eslint index.js util/  lib/ --fix",
-    "build": "webpack --sourcemap=false --progress "
+    "build": "webpack --sourcemap=false --progress ",
+    "doc": "./node_modules/.bin/jsdoc ./lib -d ./doc&&./node_modules/.bin/jsdoc  lib ./README.md  -d ./doc",
+    "docmd":"./node_modules/jsdoc-to-markdown/bin/cli.js  lib/* > api.md"
   },
   "dependencies": {
-    "@jswebfans/amino-js":"0.4.5",
+    "@jswebfans/amino-js": "0.4.5",
     "@jswebfans/bcryptjs": "2.4.4",
     "bech32": "^1.1.3",
     "bip32": "^2.0.3",
     "bip39": "^3.0.2",
     "buffer-to-uint8array": "^1.1.0",
+    "jsdoc": "^3.6.4",
+    "jsdoc-to-markdown": "^5.0.3",
     "ripemd160": "^2.0.2",
     "secp256k1": "^3.7.1",
     "sha256": "^0.2.0",
