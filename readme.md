@@ -1,10 +1,6 @@
 # lambdaHDKey
 Use in node environment or webback
 
-```
-var hdkey=require('@jswebfans/hdkeytest')
-```
-
 for example
 ```
 var hdkey= require('./index.js')

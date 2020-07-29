@@ -79,3 +79,25 @@ describe('lib/keyStore file', () => {
     });
     
 });
+
+describe('lib/keyStore getSigner ', () => {
+    var keys = LAMBHDKEY.crypto.getKeysFromMnemonic(MNEMONIC);
+
+    var privateKey = LAMBHDKEY.keyStore.checkJson(JSON.parse(configfile),password);
+
+    var SignerFn = LAMBHDKEY.keyStore.getSigner(JSON.parse(configfile),password);
+
+    // it('Sign', () => {   
+    //     // keys.privateKey.toString('base64').should.be.equal(privateKey.toString('base64'));
+    //    var result = SignerFn(Buffer.from('hello'));
+
+    // });
+
+    it('Sign only once', () => {   
+        // keys.privateKey.toString('base64').should.be.equal(privateKey.toString('base64'));
+        var result = SignerFn('hello');
+        SignerFn('hello2').should.throw(Error('only can be sign onece')
+        
+    });
+    
+});
