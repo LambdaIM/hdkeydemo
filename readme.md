@@ -1,6 +1,6 @@
 参考示例 https://github.com/LambdaIM/walletdoccode 
 
-完善的 lambda HDKey 用于演示和测试
+根据示例完善的 lambda HDKey 用于演示和测试
 
 主要功能
 
